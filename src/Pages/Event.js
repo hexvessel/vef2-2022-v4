@@ -20,7 +20,7 @@ export default function Event() {
             setError(null);
 
             let json;
-            const eventId = window.location.href.substring(29);
+            const eventId = window.location.pathname.substring(8);
             const url = `https://vef2-20222-v3-synilausn.herokuapp.com/events/${eventId}`;
 
             try {
