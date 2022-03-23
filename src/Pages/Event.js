@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../LoginP';
-
+import { Form } from './Component/Form/Form';
+import { Input } from './Component/Input/Input';
 
 export default function Event() {
     const loginContext = useContext(Context);
@@ -86,33 +87,14 @@ export default function Event() {
                 </ul>
             </div>
             {loginContext.login === false && <div className="event__registeredItem">Skráðu þig inn til að skrá þig á viðburðinn</div>}
-            {loginContext.login === true && registered === false && <form className="field field--textarea">
-                <div >
-                    <label >Athugasemd:</label>
-                    <input></input>
-                </div>
+            {loginContext.login === true && registered === false && <Form>
+                <label >Athugasemd:</label>
+                <Input></Input>
                 <button className="button" onClick={() => toggleRegistered() }>Skrá mig</button>
-            </form>}
+            </Form>}
             {loginContext.login === true && registered === true && <div> Þú hefur verið skráður á viðburðinn </div>}
             <Link className="link__link" to="/">Til baka</Link>
         </section>
     );
 
 }
-/*
-<div className="event__registered">
-<h2 className="event__subtitle">Skráningar á viðburð</h2>
-{event.registrations.length === 0 &&
-    <p className="event__empty">Engin hefur skráð sig á þennan viðburð</p>
-}
-<ul className="event__registeredList">
-    {event.registrations.length > 0 && event.registrations.map((reg, i) => {
-        <li className="event__registeredItem">
-            <span className="event__registeredName">{reg.name}</span>
-            { reg.comment != null && 
-            <span className="event__registeredComment">{reg.comment}</span>}
-        </li>
-    })};
-</ul>
-
-</div>*/

@@ -7,6 +7,6 @@ export function Button(props) {
 
 
   return (
-    <button onClick={onClick} >{children}</button>
+    <button onClick={onClick} data-testid="login-button" >{children}</button>
   );
 }

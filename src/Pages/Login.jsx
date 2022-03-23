@@ -1,24 +1,25 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-
+import {Button } from './Component/LoginButton/LoginButton';
+import {Input} from './Component/Input/Input';
 
 function Login() {
   return (<section>
     <h1>Innskráning</h1>
       <form className="form">
   <div className="field">
-    <label htmlFor="username">Notendanafn</label>
-    <input type="text" name="username" id="username"></input>
+    <label >Notendanafn</label>
+    <Input></Input>
   </div>
 
 
   <div className="field">
-    <label htmlFor="password">Lykilorð</label>
-    <input type="password" name="password" id="password"></input>
+    <label >Lykilorð</label>
+    <input ></input>
   </div>
 
 
-  <button className="button">Innskrá</button>
+  <Button className="button" >Innskrá</Button>
 </form>
         <Link to='/'>Til Baka</Link>
     </section>);
